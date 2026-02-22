@@ -1,6 +1,4 @@
-# gattafoniapryl.github.io
-
-#Environmental Scientist
+# Environmental Scientist
 
 ### Education
 BSc. Environmental Science, Concentration in Geographical Information Science
