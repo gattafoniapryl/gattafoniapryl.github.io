@@ -2,4 +2,4 @@ title: Apryl Gattafoni
 logo: Gattafoni_Headshot_Corrected_Crop.png
 #description: text below image
 #show_downloads: true
-remote_theme: astro-theme-cactus
+theme: jekyll-theme-minima
