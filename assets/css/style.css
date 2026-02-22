@@ -1,1 +1,12 @@
+---
+---
+/* This changes the main background and text */
+body {
+  background-color: #2b2b2b !important; /* Example: Dark Grey */
+  color: #f0f0f0 !important;            /* Example: Off-white text */
+}
 
+/* This changes the header text from blue to something else */
+h1, h2, h3, .site-title, .project-name {
+  color: #ffcc00 !important;            /* Example: Gold */
+}
