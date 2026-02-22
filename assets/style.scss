@@ -1,21 +1,24 @@
 ---
-# This "Front Matter" (the dashes) must be at the very top!
 ---
-
 @import "{{ site.theme }}";
 
-/* Your Dark Palette Overrides */
-body {
+/* Forced Dark Mode Palette */
+html, body, .wrapper {
   background-color: #121212 !important;
   color: #E0E0E0 !important;
 }
 
-/* Fix for the blue headers */
-h1, h2, h3, .site-title, .project-name {
+/* Fix for the headers */
+h1, h2, h3, .project-name, .project-tagline {
   color: #BB86FC !important;
 }
 
-/* Links */
+/* Link Color */
 a {
   color: #03DAC6 !important;
+}
+
+/* Special fix for the Minimal Theme Sidebar/Header area */
+header {
+  background-color: #121212 !important;
 }
