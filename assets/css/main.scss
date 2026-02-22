@@ -1,13 +1,16 @@
 ---
+# This "Front Matter" (the dashes) must be at the very top!
 ---
-/* Overall Page Style */
+
+@import "{{ site.theme }}";
+
+/* Your Dark Palette Overrides */
 body {
   background-color: #121212 !important;
   color: #E0E0E0 !important;
-  line-height: 1.6;
 }
 
-/* Headers (Replaces the blue text) */
+/* Fix for the blue headers */
 h1, h2, h3, .site-title, .project-name {
   color: #BB86FC !important;
 }
@@ -15,16 +18,4 @@ h1, h2, h3, .site-title, .project-name {
 /* Links */
 a {
   color: #03DAC6 !important;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-  color: #BB86FC !important;
-}
-
-/* Horizontal Rules/Lines */
-hr {
-  border: 0;
-  border-top: 1px solid #333333;
 }
