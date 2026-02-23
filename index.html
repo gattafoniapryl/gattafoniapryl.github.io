@@ -5,15 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apryl Gattafoni</title>
     <style>
+        /* NATURAL EARTH-TONE PALETTE */
+        :root {
+            --bg-deep: #1b1a18;      /* Warm Charcoal */
+            --bg-sidebar: #262421;   /* Warmer Grey-Brown */
+            --text-main: #e8e2d6;    /* Soft Cream */
+            --text-muted: #b5ada2;   /* Muted Sand */
+            --accent-warm: #d97706;  /* Burnt Orange */
+            --accent-gold: #c5a059;  /* Muted Gold/Tan */
+            --border: #3d3a35;       /* Earthy Divider */
+        }
+
         /* BASE THEME & LAYOUT */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #121212;
-            color: #E0E0E0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            overflow: hidden; /* Prevents the whole page from scrolling */
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: "Georgia", serif; /* A more "natural" feeling font */
+            overflow: hidden;
+        }
+
+        /* Clean Sans-serif for UI/Headers */
+        h1, h2, h3, .sidebar p {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         .container {
@@ -24,12 +40,12 @@
         /* STATIC SIDEBAR (Left) */
         .sidebar {
             width: 320px;
-            background-color: #1a1a1a;
+            background-color: var(--bg-sidebar);
             padding: 60px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-right: 1px solid #333;
+            border-right: 1px solid var(--border);
             text-align: center;
             flex-shrink: 0;
         }
@@ -38,130 +54,62 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 3px solid #BB86FC;
+            border: 3px solid var(--accent-warm);
             object-fit: cover;
             margin-bottom: 20px;
+            filter: sepia(20%); /* Subtle warmth on the photo */
         }
 
         h1 {
-            color: #BB86FC;
+            color: var(--accent-warm);
             font-size: 1.8rem;
             margin: 0;
-            border-bottom: none; /* Removed border from sidebar name */
-            padding-bottom: 0;
+            letter-spacing: 0.5px;
         }
 
         /* SCROLLABLE CONTENT (Right) */
         .content {
             flex-grow: 1;
             padding: 60px 80px;
-            overflow-y: auto; /* This makes only the right side scroll */
-            line-height: 1.6;
+            overflow-y: auto;
+            line-height: 1.8;
         }
 
         /* HEADER & ACCENT STYLING */
         h2 {
-            color: #BB86FC;
-            margin-top: 1.5em;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+            color: var(--accent-gold);
+            margin-top: 2em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 2px;
         }
 
         h3 {
-            color: #03DAC6; /* Teal accent for job titles */
-            margin-top: 1.2em;
+            color: var(--accent-warm);
+            margin-top: 1.5em;
+            font-size: 1.3rem;
         }
 
         /* LINK COLORS */
         a {
-            color: #03DAC6;
+            color: var(--accent-gold);
             text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
         }
-        a:hover { text-decoration: underline; }
+        a:hover { 
+            border-bottom: 1px solid var(--accent-gold);
+        }
 
         /* LIST STYLING */
         ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
+        li { margin-bottom: 10px; color: var(--text-muted); }
+        li strong { color: var(--text-main); }
 
         /* MOBILE RESPONSIVENESS */
         @media (max-width: 850px) {
             body, html { overflow: auto; }
             .container { flex-direction: column; height: auto; }
-            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #333; padding: 40px 0; }
-            .content { padding: 40px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <aside class="sidebar">
-            <img src="Gattafoni_Headshot_Corrected_Crop.png" alt="Apryl Gattafoni" class="profile-img">
-            <h1>Apryl Gattafoni</h1>
-            <p style="color: #A0A0A0; margin-top: 15px;">Environmental Scientist & Data Analyst</p>
-            <div style="margin-top: 30px;">
-                <a href="https://github.com/gattafoniapryl">GitHub</a>
-            </div>
-        </aside>
-
-        <main class="content">
-            
-            <section>
-                <h2>Professional Profile</h2>
-                <p>Environmental Scientist, Data Analyst, Sustainability Specialist, Environmental Consultant</p>
-
-                <h2>Education</h2>
-                <p><strong>BSc. Environmental Science</strong>, Concentration in Geographical Information Science<br>
-                <em>University of Lethbridge, Lethbridge, Alberta</em></p>
-
-                <h2>Relevant Certifications</h2>
-                <ul>
-                    <li>Level C First Aid - CPR & AED</li>
-                    <li>ICS-100 - Incident Command System (Introductory)</li>
-                    <li>Basic Emergency Management</li>
-                </ul>
-
-                <h2>Work Experience</h2>
-                <h3>Sustainability Specialist</h3>
-                <p><em>City of Lethbridge</em></p>
-
-                <h3>Junior Environmental Consultant</h3>
-                <p><em>GCL Environmental Ltd., Remote, Alberta</em></p>
-                <ul>
-                    <li>Conducted fieldwork in cultivated lands, with knowledge of southern Alberta’s vegetation.</li>
-                    <li>Skilled in communicating with landowners and explaining processes.</li>
-                    <li>Proficient in soil identification, classification, and use of Munsell colour chart.</li>
-                    <li>Detail-oriented in field data collection, reporting, and reclamation certificate applications.</li>
-                    <li>Background JavaScript formatting of ESRI Survey123 forms for field use.</li>
-                    <li>Background AGOL formatting of ESRI Dashboards.</li>
-                </ul>
-
-                <h2>Projects</h2>
-                <h3>Warm & Dry: An Analysis of the Influence of Drought on Fire</h3>
-                <p><em>University of Lethbridge Department of Geography and Environment, NSERC</em></p>
-                <ul>
-                    <li>Presented spatial analysis project to the Western Division, Canadian Association of Geographers (2025).</li>
-                    <li>Used Canadian Drought Monitor spatial data with BC government open data.</li>
-                    <li>Performed spatial statistic operations for a 10-year span using ESRI ArcMap.</li>
-                    <li><a href="https://storymaps.arcgis.com/stories/65a231ce568d49a582114c633a279100">View Presentation StoryMap</a></li>
-                </ul>
-
-                <h3>Post-fire Ecological Succession in Waterton Lakes National Park</h3>
-                <p><em>University of Lethbridge, NSERC, and Canada Wildfire</em></p>
-                <ul>
-                    <li>Managed 60 vegetation plots tracking regeneration following the 2017 Kenow Fire.</li>
-                    <li>Collected weather data, soil moisture, vegetation density, and species identification.</li>
-                    <li>Presented findings at the Western Division, Canadian Association of Geographers conference (2023).</li>
-                </ul>
-            </section>
-
-            <section style="margin-top: 50px; padding-bottom: 50px;">
-                <h2>Contact</h2>
-                <p>Connect with me on <a href="https://github.com/gattafoniapryl">GitHub</a>.</p>
-            </section>
-
-        </main>
-    </div>
-
-</body>
-</html>
+            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border);
