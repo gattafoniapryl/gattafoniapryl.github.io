@@ -5,111 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apryl Gattafoni</title>
     <style>
-        /* NATURAL EARTH-TONE PALETTE */
         :root {
-            --bg-deep: #1b1a18;      /* Warm Charcoal */
-            --bg-sidebar: #262421;   /* Warmer Grey-Brown */
-            --text-main: #e8e2d6;    /* Soft Cream */
-            --text-muted: #b5ada2;   /* Muted Sand */
-            --accent-warm: #d97706;  /* Burnt Orange */
-            --accent-gold: #c5a059;  /* Muted Gold/Tan */
-            --border: #3d3a35;       /* Earthy Divider */
+            --bg-deep: #1b1a18;
+            --bg-sidebar: #262421;
+            --text-main: #e8e2d6;
+            --text-muted: #b5ada2;
+            --accent-warm: #d97706;
+            --accent-gold: #c5a059;
+            --border: #3d3a35;
         }
 
-        /* BASE THEME & LAYOUT */
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
             background-color: var(--bg-deep);
             color: var(--text-main);
-            font-family: "Georgia", serif; /* A more "natural" feeling font */
-            overflow: hidden;
+            font-family: "Georgia", serif;
+            height: 100%;
         }
 
-        /* Clean Sans-serif for UI/Headers */
-        h1, h2, h3, .sidebar p {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
+        /* The main layout container */
         .container {
             display: flex;
-            height: 100vh;
+            flex-direction: row;
+            min-height: 100vh;
         }
 
-        /* STATIC SIDEBAR (Left) */
+        /* Sidebar Styling */
         .sidebar {
-            width: 320px;
+            width: 300px;
             background-color: var(--bg-sidebar);
-            padding: 60px 20px;
+            border-right: 1px solid var(--border);
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-right: 1px solid var(--border);
             text-align: center;
+            position: sticky; /* Keeps it locked on the left */
+            top: 0;
+            height: 100vh;
             flex-shrink: 0;
         }
 
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 3px solid var(--accent-warm);
             object-fit: cover;
+            background-color: var(--border); /* Gray circle if image fails */
             margin-bottom: 20px;
-            filter: sepia(20%); /* Subtle warmth on the photo */
         }
 
         h1 {
             color: var(--accent-warm);
-            font-size: 1.8rem;
-            margin: 0;
-            letter-spacing: 0.5px;
+            font-family: sans-serif;
+            font-size: 1.5rem;
+            margin: 10px 0;
         }
 
-        /* SCROLLABLE CONTENT (Right) */
+        /* Content Area */
         .content {
             flex-grow: 1;
-            padding: 60px 80px;
-            overflow-y: auto;
+            padding: 40px 60px;
+            max-width: 900px;
             line-height: 1.8;
         }
 
-        /* HEADER & ACCENT STYLING */
         h2 {
             color: var(--accent-gold);
-            margin-top: 2em;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
+            font-family: sans-serif;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.9rem;
             letter-spacing: 2px;
+            border-bottom: 1px solid var(--border);
+            margin-top: 30px;
+            padding-bottom: 5px;
         }
 
-        h3 {
-            color: var(--accent-warm);
-            margin-top: 1.5em;
-            font-size: 1.3rem;
-        }
-
-        /* LINK COLORS */
-        a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
-        }
-        a:hover { 
-            border-bottom: 1px solid var(--accent-gold);
-        }
-
-        /* LIST STYLING */
+        h3 { color: var(--accent-warm); font-family: sans-serif; margin-top: 25px; }
+        
+        a { color: var(--accent-gold); text-decoration: none; border-bottom: 1px solid transparent; }
+        a:hover { border-bottom: 1px solid var(--accent-gold); }
+        
         ul { padding-left: 20px; }
-        li { margin-bottom: 10px; color: var(--text-muted); }
-        li strong { color: var(--text-main); }
+        li { margin-bottom: 8px; color: var(--text-muted); }
+        strong { color: var(--text-main); }
 
-        /* MOBILE RESPONSIVENESS */
-        @media (max-width: 850px) {
-            body, html { overflow: auto; }
-            .container { flex-direction: column; height: auto; }
-            .sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border);
+        /* Mobile View Fix */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+            .content { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <img src="Gattafoni_Headshot_Corrected_Crop.png" alt="AG" class="profile-img">
+        <h1>Apryl Gattafoni</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem; font-style: italic;">Waste & Environment Professional</p>
+        <p><a href="https://github.com/gattafoniapryl">GitHub Profile</a></p>
+    </aside>
+
+    <main class="content">
+        <h2>Professional Profile</h2>
+        <p>Environmental Scientist, Data Analyst, Sustainability Specialist, Environmental Consultant</p>
+
+        <h2>Education</h2>
+        <p><strong>BSc. Environmental Science</strong>, Concentration in GIS<br>
+        <em>University of Lethbridge, Alberta</em></p>
+
+        <h2>Work Experience</h2>
+        <h3>Sustainability Specialist</h3>
+        <p><em>City of Lethbridge</em></p>
+
+        <h3>Junior Environmental Consultant</h3>
+        <p><em>GCL Environmental Ltd.</em></p>
+        <ul>
+            <li>Fieldwork in cultivated lands with knowledge of southern Alberta’s vegetation.</li>
+            <li>Proficient in soil identification and <strong>Munsell colour charts</strong>.</li>
+            <li>JavaScript formatting for ESRI Survey123 and AGOL Dashboards.</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <h3>Influence of Drought on Fire</h3>
+        <p><em>NSERC & University of Lethbridge</em></p>
+        <ul>
+            <li>Spatial analysis project presented to the Canadian Association of Geographers (2025).</li>
+            <li><a href="https://storymaps.arcgis.com/stories/65a231ce568d49a582114c633a279100">View StoryMap</a></li>
+        </ul>
+
+        <h3>Post-fire Ecological Succession</h3>
+        <p><em>Waterton Lakes National Park</em></p>
+        <ul>
+            <li>Managed 60 vegetation plots tracking regeneration after the 2017 Kenow Fire.</li>
+        </ul>
+        
+        <div style="height: 100px;"></div> </main>
+</div>
+
+</body>
+</html>
